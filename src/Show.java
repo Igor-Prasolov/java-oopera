@@ -2,10 +2,10 @@ import java.util.*;
 
 public class Show {
 
-    private String title;
-    private int duration;
-    private Director director;
-    private ArrayList<Actor> listOfActors;
+    protected String title;
+    protected int duration;
+    protected Director director;
+    protected ArrayList<Actor> listOfActors;
 
 
     public Show(String title, int duration, Director director, ArrayList<Actor> actor) {
@@ -13,6 +13,11 @@ public class Show {
         this.duration = duration;
         this.director = director;
         this.listOfActors = new ArrayList<>(actor);
+    }
+
+
+    public void printDirectorInfo() {
+        System.out.println(director.getName() + " " + director.getSurname() + " " + director.getNumbersOfShows());
     }
 
 

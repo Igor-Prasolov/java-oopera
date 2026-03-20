@@ -1,9 +1,5 @@
-import java.util.ArrayList;
-
-import java.util.Objects;
-
 public class Actor extends Person {
-    private int height;
+    int height;
 
 
     public int getHeight() {
@@ -16,22 +12,22 @@ public class Actor extends Person {
 
     @Override
     public boolean equals(Object obj) {
-        if (this == obj) return true;
+        if (!super.equals(obj)) return false;
         if (obj == null || getClass() != obj.getClass()) return false;
         Actor actor = (Actor) obj;
-        return height == actor.height
-                && Objects.equals(getName(), actor.getName())
-                && Objects.equals(getSurname(), actor.getSurname());
+        return height == actor.height;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(height, getName(), getSurname());
+        int hash = super.hashCode();
+        hash = 31 * hash + height;
+        return hash;
     }
 
     @Override
     public String toString() {
-        return getName() + " " + getSurname() + "(" + getHeight() + " см)";
+        return getName() + " " + getSurname() + " (" + height + " см)";
     }
 
 

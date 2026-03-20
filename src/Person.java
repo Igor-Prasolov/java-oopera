@@ -1,9 +1,9 @@
 import java.util.Objects;
 
 public class Person {
-    private String name;
-    private String surname;
-    private Gender gender;
+    protected String name;
+    protected String surname;
+    protected Gender gender;
 
 
     public String getName() {
@@ -29,6 +29,31 @@ public class Person {
 
     public void setGender(Gender gender) {
         this.gender = gender;
+    }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Person person = (Person) obj;
+        return Objects.equals(name, person.name)
+                && Objects.equals(surname, person.surname)
+                && Objects.equals(gender, person.gender);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, gender);
+    }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name = " + name + ", " +
+                "surname = " + surname + ", " +
+                "gender = " + gender +
+                "}";
     }
 
 

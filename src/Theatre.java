@@ -40,5 +40,10 @@ public class Theatre {
         System.out.println("---Либретто--");
         balet.printLibretto();
         opera.printLibretto();
+
+//        System.out.println();
+//        show.printDirectorInfo();
+//        balet.printDirectorInfo();
+//        opera.printDirectorInfo();
     }
 }
