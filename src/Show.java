@@ -17,7 +17,7 @@ public class Show {
 
 
     public void printDirectorInfo() {
-        System.out.println(director.getName() + " " + director.getSurname() + " " + director.getNumbersOfShows());
+        System.out.println(director.toString());
     }
 
 
